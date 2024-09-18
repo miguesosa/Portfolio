@@ -1,0 +1,53 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Encabezado */
+.header-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-container img {
+    width: 120px;
+    height: 120px;
+}
+
+.header-container .text-content {
+    margin-left: 20px;
+}
+
+/* Secciones */
+.section {
+    padding: 5px;
+}
+
+/* Estilos para los hr */
+.hr-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hr-container hr {
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+}

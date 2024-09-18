@@ -1,10 +1,17 @@
-/* Estilos generales */
+:root {
+    --fondo-principal: #FAFAFA;
+    --texto-principal: #2C2C2C;
+    --color-accion: #1B4965;
+    --color-secundario: #CA6702;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
 }
 
-/* Encabezado */
 .header-container {
     display: flex;
     align-items: center;
@@ -21,26 +28,23 @@ body {
     margin-left: 20px;
 }
 
-/* Secciones */
 .section {
     padding: 5px;
 }
 
-/* Estilos para los hr */
 .hr-container {
     display: flex;
     justify-content: center;
 }
 
 .hr-container hr {
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-accion);
 }
 
-/* Footer */
 .footer {
-    background-color: #f8f9fa;
     padding: 10px 0;
     text-align: left;
+    background-color: var(--fondo-principal);
 }
 
 .footer p {
@@ -51,3 +55,40 @@ body {
     display: flex;
     gap: 10px;
 }
+
+/* Estilos para botones */
+a.btn-primary {
+    background-color: var(--color-accion);
+    border-color: var(--color-accion);
+    color: var(--fondo-principal);
+    border-radius: 30px; 
+}
+
+a.btn-primary:hover {
+    background-color: #0F2D40;
+}
+
+a.btn-secondary {
+    background-color: var(--fondo-principal);
+    border-color: var(--texto-principal);
+    color: var(--texto-principal);
+    border-radius: 30px;
+}
+
+a.btn-secondary:hover {
+    background-color: #EAEAEA;
+    color: var(--texto-principal)
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-secundario);
+}
+
+/* Ajustes de diseño para secciones */
+.section {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    padding: 10px;
+}
+

@@ -3,13 +3,31 @@
     --texto-principal: #2C2C2C;
     --color-accion: #1B4965;
     --color-secundario: #CA6702;
+    --degradado-botones: linear-gradient(45deg, #e8ad83, #91ae5d, #b75f30);
 }
 
+/* Fondo dinámico con degradado */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--fondo-principal);
+    background: linear-gradient(45deg, #e8ad83, #91ae5d, #b75f30);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     color: var(--texto-principal);
+    scroll-behavior: smooth;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body header.bg-light {
+    background-color: transparent !important; 
+    padding: 20px 0;
+    z-index: 1;
+    position: relative;
 }
 
 .header-container {
@@ -20,40 +38,31 @@ body {
 }
 
 .header-container img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-container img:hover {
+    transform: scale(1.1);
 }
 
 .header-container .text-content {
     margin-left: 20px;
 }
 
+/* Ajuste de secciones */
 .section {
-    padding: 5px;
+    padding: 30px 20px;
+    background-color: transparent;
+    color: var(--texto-principal);
 }
 
-.hr-container {
-    display: flex;
-    justify-content: center;
-}
-
-.hr-container hr {
-    border: 1px solid var(--color-accion);
-}
-
+/* Estilo para el footer */
 .footer {
-    padding: 10px 0;
-    text-align: left;
-    background-color: var(--fondo-principal);
-}
-
-.footer p {
-    margin-bottom: 10px;
-}
-
-.footer-buttons {
-    display: flex;
-    gap: 10px;
+    background-color: transparent;
+    padding: 20px 0;
+    margin: 20px, 0px;
 }
 
 /* Estilos para botones */
@@ -66,18 +75,30 @@ a.btn-primary {
 
 a.btn-primary:hover {
     background-color: #0F2D40;
+    filter: brightness(1.1);
+    transform: scale(1.03);
 }
 
 a.btn-secondary {
-    background-color: var(--fondo-principal);
+    background: linear-gradient(45deg, #e8ad83, #91ae5d, #b75f30);
+    background-size: 400% 400%;
+    animation: gradientAnimationBtn 15s ease infinite;
     border-color: var(--texto-principal);
     color: var(--texto-principal);
     border-radius: 30px;
+    transition: background-position 0.1s ease;
+}
+
+@keyframes gradientAnimationBtn {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 a.btn-secondary:hover {
-    background-color: #EAEAEA;
-    color: var(--texto-principal)
+    background-position: 100% 50%; 
+    filter: brightness(1.1); 
+    transform: scale(1.05);
 }
 
 /* Estilos para títulos */
@@ -85,10 +106,4 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-secundario);
 }
 
-/* Ajustes de diseño para secciones */
-.section {
-    background-color: var(--fondo-principal);
-    color: var(--texto-principal);
-    padding: 10px;
-}
-
+/* Mantener el diseño general */

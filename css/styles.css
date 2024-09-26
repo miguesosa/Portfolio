@@ -24,7 +24,7 @@ body {
 }
 
 body header.bg-light {
-    background-color: transparent !important; 
+    background-color: transparent !important;
     padding: 20px 0;
     z-index: 1;
     position: relative;
@@ -33,22 +33,33 @@ body header.bg-light {
 .header-container {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Aseguramos que los elementos se distribuyan correctamente */
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
-.header-container img {
-    width: 150px;
-    height: 150px;
+/* Ajuste solo para la imagen de perfil */
+.header-container .profile-img {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover; 
     transition: transform 0.3s ease-in-out;
 }
 
-.header-container img:hover {
+.header-container .profile-img:hover {
     transform: scale(1.1);
 }
 
 .header-container .text-content {
+    flex-grow: 1; /* Esto hará que el texto ocupe el espacio disponible */
     margin-left: 20px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 12px;
 }
 
 /* Ajuste de secciones */
@@ -62,7 +73,7 @@ body header.bg-light {
 .footer {
     background-color: transparent;
     padding: 20px 0;
-    margin: 20px, 0px;
+    margin-bottom: 20px;
 }
 
 /* Estilos para botones */
@@ -70,7 +81,7 @@ a.btn-primary {
     background-color: var(--color-accion);
     border-color: var(--color-accion);
     color: var(--fondo-principal);
-    border-radius: 30px; 
+    border-radius: 30px;
 }
 
 a.btn-primary:hover {
@@ -80,13 +91,25 @@ a.btn-primary:hover {
 }
 
 a.btn-secondary {
-    background: linear-gradient(45deg, #e8ad83, #91ae5d, #b75f30);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--degradado-botones);
     background-size: 400% 400%;
     animation: gradientAnimationBtn 15s ease infinite;
     border-color: var(--texto-principal);
     color: var(--texto-principal);
     border-radius: 30px;
     transition: background-position 0.1s ease;
+}
+
+.btn-secondary .icon {
+    flex-shrink: 0;
+}
+
+.btn-secondary span {
+    display: inline-block;
+    text-align: center;
 }
 
 @keyframes gradientAnimationBtn {
@@ -96,8 +119,8 @@ a.btn-secondary {
 }
 
 a.btn-secondary:hover {
-    background-position: 100% 50%; 
-    filter: brightness(1.1); 
+    background-position: 100% 50%;
+    filter: brightness(1.1);
     transform: scale(1.05);
 }
 
@@ -106,4 +129,20 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-secundario);
 }
 
-/* Mantener el diseño general */
+/* Estilos para los iconos */
+.icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+/* Ajustes específicos para los íconos del header */
+.header .icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Asegurar que los iconos tengan el mismo color que el texto del botón */
+a.btn-primary .icon {
+    filter: invert(100%);
+}

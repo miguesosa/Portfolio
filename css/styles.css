@@ -1,174 +1,214 @@
+/* 
+    Archivo: styles.css
+    Descripción: Estilos principales para el portfolio personal.
+    Incluye diseño del fondo dinámico, botones, secciones, y animaciones.
+*/
+
+/* Variables de colores */
 :root {
-    --fondo-principal: #FAFAFA;
-    --texto-principal: #2C2C2C;
-    --color-accion: #1B4965;
-    --color-secundario: #CA6702;
-    --degradado-botones: linear-gradient(45deg, #e8ad83, #91ae5d, #b75f30);
+  --fondo-principal: #fafafa; /* Color de fondo principal */
+  --texto-principal: #2c2c2c; /* Color de texto */
+  --color-accion: #1b4965; /* Color para acciones principales */
+  --color-secundario: #ca6702; /* Color para títulos */
+  --degradado-botones: linear-gradient(
+    45deg,
+    #e8ad83,
+    #91ae5d,
+    #b75f30
+  ); /* Degradado para botones secundarios */
 }
 
-/* Fondo dinámico con degradado */
+/* Estilos globales */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #e8ad83, #91ae5d, #b75f30);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    color: var(--texto-principal);
-    scroll-behavior: smooth;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    45deg,
+    #e8ad83,
+    #91ae5d,
+    #b75f30
+  ); /* Fondo dinámico */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite; /* Animación de degradado */
+  color: var(--texto-principal);
+  scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
+/* Animación del fondo */
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+/* Header */
 body header.bg-light {
-    background-color: transparent !important;
-    padding: 20px 0;
-    z-index: 1;
-    position: relative;
+  background-color: transparent !important;
+  padding: 20px 0;
+  z-index: 1;
+  position: relative;
 }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Aseguramos que los elementos se distribuyan correctamente */
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* Ajuste solo para la imagen de perfil */
+/* Imagen de perfil */
 .header-container .profile-img {
-    width: 200px; 
-    height: 200px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    transition: transform 0.3s ease-in-out;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Efecto de zoom al pasar el ratón */
 }
 
 .header-container .profile-img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1); /* Ampliación de la imagen en hover */
 }
 
+/* Texto del header */
 .header-container .text-content {
-    flex-grow: 1; /* Esto hará que el texto ocupe el espacio disponible */
-    margin-left: 20px;
+  flex-grow: 1;
+  margin-left: 20px;
 }
 
+/* Botones del header */
 .header-buttons {
-    display: flex;
-    gap: 10px;
-    padding-bottom: 12px;
+  display: flex;
+  gap: 10px;
+  padding-bottom: 12px;
 }
 
-/* Ajuste de secciones */
+/* Secciones del portfolio */
 .section {
-    padding: 15px;
-    background-color: transparent;
-    color: var(--texto-principal);
+  padding: 15px;
+  background-color: transparent;
+  color: var(--texto-principal);
 }
 
 .row {
-    margin-top: 15px !important; /* Agrega margen superior entre el título y la fila */
+  margin-top: 15px !important;
 }
 
-/* Estilo para el footer */
+/* Footer */
 .footer {
-    background-color: transparent;
-    padding: 20px 0;
-    margin-bottom: 20px;
+  background-color: transparent;
+  padding: 20px 0;
+  margin-bottom: 20px;
 }
 
-/* Estilos para botones */
+/* Botones */
 a.btn-primary {
-    background-color: var(--color-accion);
-    border-color: var(--color-accion);
-    color: var(--fondo-principal);
-    border-radius: 30px;
+  background-color: var(--color-accion);
+  border-color: var(--color-accion);
+  color: var(--fondo-principal);
+  border-radius: 30px;
 }
 
 a.btn-primary:hover {
-    background-color: #0F2D40;
-    filter: brightness(1.1);
-    transform: scale(1.03);
+  background-color: #0f2d40;
+  filter: brightness(1.1); /* Aumento de brillo en hover */
+  transform: scale(1.03); /* Efecto de zoom en hover */
 }
 
 a.btn-secondary {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--degradado-botones);
-    background-size: 400% 400%;
-    animation: gradientAnimationBtn 15s ease infinite;
-    border-color: var(--texto-principal);
-    color: var(--texto-principal);
-    border-radius: 30px;
-    transition: background-position 0.1s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--degradado-botones);
+  background-size: 400% 400%;
+  animation: gradientAnimationBtn 15s ease infinite;
+  border-color: var(--texto-principal);
+  color: var(--texto-principal);
+  border-radius: 30px;
+  transition: background-position 0.1s ease;
 }
 
 .btn-secondary .icon {
-    flex-shrink: 0;
+  flex-shrink: 0; /* Impide que el icono se reduzca */
 }
 
 .btn-secondary span {
-    display: inline-block;
-    text-align: center;
+  display: inline-block;
+  text-align: center;
 }
 
+/* Animación del degradado en botones */
 @keyframes gradientAnimationBtn {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 a.btn-secondary:hover {
-    background-position: 100% 50%;
-    filter: brightness(1.1);
-    transform: scale(1.05);
+  background-position: 100% 50%;
+  filter: brightness(1.1);
+  transform: scale(1.05);
 }
 
-/* Estilos para títulos */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-secundario);
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-secundario);
 }
 
-/* Estilos para los iconos */
+/* Iconos generales */
 .icon {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
 }
 
 .tech-icon {
-    width: 32px;  /* Tamaño ajustable según la preferencia */
-    height: 32px;
-    margin-right: 10px;
-    vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-/* Estilo para las listas en la sección de habilidades */
+/* Listas de habilidades */
 #habilidades ul {
-    list-style-type: none;  /* Quitar los puntos de la lista */
-    padding-left: 0;  /* Eliminar el margen izquierdo predeterminado de la lista */
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding-left: 0;
 }
 
 #habilidades li {
-    margin-bottom: 15px;  /* Espacio vertical entre los ítems de la lista */
+  margin-bottom: 15px; /* Espaciado entre ítems de la lista */
 }
 
-/* Separar los títulos h3 de las listas */
 #habilidades h3 {
-    margin-bottom: 20px;  /* Ajusta el espacio entre los títulos y las listas */
+  margin-bottom: 20px;
 }
 
-/* Ajustes específicos para los íconos del header */
+/* Ajustes de iconos en header */
 .header .icon {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
-/* Asegurar que los iconos tengan el mismo color que el texto del botón */
+/* Iconos en botones primarios */
 a.btn-primary .icon {
-    filter: invert(100%);
+  filter: invert(
+    100%
+  ); /* Asegurar que los iconos en botones primarios sean visibles */
 }

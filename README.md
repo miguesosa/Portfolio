@@ -18,7 +18,7 @@ A lo largo de mi formación y experiencia, he trabajado con diversas tecnología
 
 Si deseas saber más sobre mis proyectos o colaborar en alguna iniciativa, no dudes en contactarme:
 
-- **LinkedIn:** [Tu LinkedIn](https://www.linkedin.com/in/miguel-adrian-sosa/)
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/miguel-adrian-sosa/)
 - **Email:** migueladriansosa@gmail.com
 
 ¡Gracias por visitar mi portfolio!

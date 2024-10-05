@@ -1,29 +1,28 @@
 /* 
-    Archivo: styles.css
-    Descripción: Estilos principales para el portfolio personal.
-    Incluye diseño del fondo dinámico, botones, secciones, y animaciones.
+    Archivo: dark.css
+    Descripción: Estilos para el modo oscuro del portfolio personal.
 */
 
-/* Variables de colores */
+/* Variables de colores para modo oscuro */
 :root {
-  --fondo-principal: #c4c9cc; /* Un gris claro */
-  --texto-principal: #112d4e; /* Color de texto principal */
-  --color-accion: #3f72af; /* Color para acciones principales */
-  --color-secundario: #dbe2ef; /* Color para títulos */
+  --fondo-principal: #1a1a1a; /* Un gris muy oscuro */
+  --texto-principal: #e0e0e0; /* Color de texto principal claro */
+  --color-accion: #3f72af; /* Mantener el mismo color para acciones */
+  --color-secundario: #dbe2ef; /* Mantener el mismo color para títulos */
 }
 
 /* Estilos globales */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: var(--fondo-principal);
-  color: var(--texto-principal);
+  background-color: var(--fondo-principal) !important; /* Fondo oscuro */
+  color: var(--texto-principal) !important; /* Texto claro */
   scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
 /* Header */
 body header.bg-light {
-  background-color: transparent !important;
+  background-color: transparent !important; /* Mantener fondo transparente */
   padding: 20px 0;
   z-index: 1;
   position: relative;
@@ -76,8 +75,8 @@ body header.bg-light {
 /* Secciones del portfolio */
 .section {
   padding: 15px;
-  background-color: transparent;
-  color: var(--texto-principal);
+  background-color: transparent; /* Mantener fondo transparente */
+  color: var(--texto-principal); /* Texto claro */
 }
 
 .row {
@@ -86,7 +85,7 @@ body header.bg-light {
 
 /* Footer */
 .footer {
-  background-color: transparent;
+  background-color: transparent; /* Mantener fondo transparente */
   padding: 20px 0;
   margin-bottom: 20px;
 }
@@ -95,7 +94,7 @@ body header.bg-light {
 a.btn-primary {
   background-color: var(--color-accion) !important;
   border-color: var(--color-accion) !important;
-  color: whitesmoke;
+  color: whitesmoke; /* Mantener texto claro */
   border-radius: 30px;
 }
 
@@ -109,8 +108,9 @@ a.btn-secondary {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: whitesmoke;
-  filter: none;
+  background: var(
+    --fondo-principal
+  ); /* Fondo oscuro para el botón secundario */
   border-color: var(--texto-principal);
   color: var(--texto-principal);
   border-radius: 30px;
@@ -119,7 +119,7 @@ a.btn-secondary {
 
 a.btn-secondary .icon {
   flex-shrink: 0; /* Impide que el icono se reduzca */
-  filter: none; /* Sin filtro por defecto */
+  filter: brightness(0) invert(1); /* Cambiar el ícono a blanco */
   transition: filter 0.3s ease-in-out; /* Transición suave para el filtro */
 }
 
@@ -130,21 +130,16 @@ a.btn-secondary .icon {
 
 a.btn-secondary:hover {
   background: var(--color-accion); /* Cambia el fondo al color del texto */
-  color: whitesmoke; /* Cambia el color del texto al fondo original */
+  color: var(
+    --fondo-principal
+  ); /* Cambia el color del texto a oscuro para contraste */
   border-color: whitesmoke; /* Cambia el borde al fondo original */
-  filter: brightness(1.1);
+  filter: none;
   transform: scale(1.1);
 }
 
-a.btn-secondary .icon {
-  flex-shrink: 0; /* Impide que el icono se reduzca */
-  color: var(
-    --texto-principal
-  ); /* Asegura que el ícono tenga el mismo color que el texto */
-}
-
 a.btn-secondary:hover .icon {
-  filter: invert(100%) brightness(1.2); /* Invierte los colores del ícono para simular el cambio a blanco */
+  filter: brightness(1); /* Cambia el color a blanco cuando se pasa el cursor */
 }
 
 /* Títulos */
@@ -154,7 +149,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-secundario);
+  color: var(--color-secundario); /* Mantener el mismo color para títulos */
 }
 
 /* Iconos generales */
@@ -168,6 +163,7 @@ h6 {
   width: 25px;
   height: 25px;
   vertical-align: middle;
+  filter: invert(100%);
 }
 
 .tech-icon {
@@ -182,6 +178,7 @@ h6 {
   height: 32px;
   margin-right: 10px;
   vertical-align: middle;
+  filter: invert(100%);
 }
 
 /* Listas de habilidades */

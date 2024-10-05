@@ -1,39 +1,30 @@
-/*
-    Archivo: main.js
-    Descripción: Scripts básicos para mejorar la funcionalidad y experiencia de usuario del portfolio personal.
-*/
+const themeSwitch = document.querySelector('#themeSwitch');
+const body = document.body;
 
-// Espera a que el DOM esté completamente cargado antes de ejecutar el código
-document.addEventListener("DOMContentLoaded", function () {
-    // Añade la clase "loaded" al body para indicar que la página se ha cargado completamente
-    document.body.classList.add("loaded");
-    /*
-        La clase "loaded" puede usarse en el CSS para aplicar estilos o animaciones
-        que se activan una vez que la página está lista. Ejemplo: transiciones de opacidad.
-    */
+// Evento para el cambio de tema
 
-    // Selecciona el switch de tema
-    const themeSwitch = document.getElementById("themeSwitch");
 
-    // Verifica si hay un tema guardado en el localStorage
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
-        themeSwitch.checked = currentTheme === "dark"; // Marca el switch si el tema es oscuro
+themeSwitch.addEventListener('change', () => {
+    if (themeSwitch.checked) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
     }
-
-    // Escucha el cambio en el switch de tema
-    themeSwitch.addEventListener("change", function () {
-        if (this.checked) {
-            // Si el switch está activado, añade la clase 'dark' y guarda el tema en localStorage
-            document.body.classList.add("dark");
-            document.body.classList.remove("light");
-            localStorage.setItem("theme", "dark");
-        } else {
-            // Si el switch está desactivado, añade la clase 'light' y guarda el tema en localStorage
-            document.body.classList.add("light");
-            document.body.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-        }
-    });
 });
+
+// Función para añadir el archivo dark.css
+function addDarkTheme() {
+  let darkTheme = document.createElement('link');
+  darkTheme.rel = 'stylesheet';
+  darkTheme.href = 'css/dark.css';  // Asegúrate de que la ruta sea correcta
+  darkTheme.id = 'dark-theme';
+  document.head.appendChild(darkTheme);
+}
+
+// Función para eliminar el archivo dark.css
+function removeDarkTheme() {
+  const darkTheme = document.getElementById('dark-theme');
+  if (darkTheme) {
+    darkTheme.remove();
+  }
+}

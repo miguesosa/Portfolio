@@ -6,19 +6,25 @@
 
 /* Variables de colores */
 :root {
-  --fondo-principal: #c4c9cc; /* Un gris claro */
-  --texto-principal: #112d4e; /* Color de texto principal */
-  --color-accion: #3f72af; /* Color para acciones principales */
-  --color-secundario: #dbe2ef; /* Color para títulos */
+  --fondo-principal: #c4c9cc;
+  /* Un gris claro */
+  --texto-principal: #112d4e;
+  /* Color de texto principal */
+  --color-accion: #3f72af;
+  /* Color para acciones principales */
+  --color-secundario: #dbe2ef;
+  /* Color para títulos */
 }
 
 /* Estilos globales */
 body {
+  animation: sunlight 8s ease-in-out infinite;
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
-  scroll-behavior: smooth; /* Desplazamiento suave */
+  scroll-behavior: smooth;
+  /* Desplazamiento suave */
 }
 
 /* Header */
@@ -43,11 +49,63 @@ body header.bg-light {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out; /* Efecto de zoom al pasar el ratón */
+  transition: transform 0.3s ease-in-out;
+  /* Efecto de zoom al pasar el ratón */
 }
 
 .header-container .profile-img:hover {
-  transform: scale(1.1); /* Ampliación de la imagen en hover */
+  transform: scale(1.1);
+  /* Ampliación de la imagen en hover */
+}
+
+/* Switch de temas */
+.theme-switch {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theme-switch input[type="checkbox"] {
+  display: none;
+}
+
+.theme-switch .theme-icons {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch .light-icon {
+  display: none;
+}
+
+.theme-switch .dark-icon {
+  display: block;
+}
+
+.theme-switch input[type="checkbox"]:checked~.theme-icons .light-icon {
+  display: block;
+}
+
+.theme-switch input[type="checkbox"]:checked~.theme-icons .dark-icon {
+  display: none;
+}
+
+/* Nueva animación de fondo para modo claro */
+@keyframes sunlight {
+  0% {
+    background-color: rgba(255, 239, 119, 1);
+  }
+
+  50% {
+    background-color: rgba(135, 206, 250, 1);
+  }
+
+  100% {
+    background-color: rgba(255, 239, 119, 1);
+  }
 }
 
 /* Texto del header */
@@ -65,11 +123,16 @@ body header.bg-light {
 
 /* Estilo del hr */
 .container hr {
-  border: none; /* Eliminar el borde predeterminado */
-  border-top: 10px dotted var(--texto-principal); /* Borde superior punteado */
-  width: 10%; /* Ajustar el ancho total del hr */
-  margin: 20px auto; /* Centrar el hr */
-  position: relative; /* Para posicionar el pseudo-elemento */
+  border: none;
+  /* Eliminar el borde predeterminado */
+  border-top: 10px dotted var(--texto-principal);
+  /* Borde superior punteado */
+  width: 10%;
+  /* Ajustar el ancho total del hr */
+  margin: 20px auto;
+  /* Centrar el hr */
+  position: relative;
+  /* Para posicionar el pseudo-elemento */
   opacity: 0.75;
 }
 
@@ -81,7 +144,22 @@ body header.bg-light {
 }
 
 .row {
-  margin-top: 15px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Espacio entre columnas */
+  margin-top: 15px;
+}
+
+.col-md-4 {
+  flex: 0 0 20% !important;
+  /* Tres columnas de igual ancho */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra en los bordes */
+  border-radius: 8px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 /* Footer */
@@ -97,15 +175,20 @@ a.btn-primary {
   border-color: var(--color-accion) !important;
   color: whitesmoke;
   border-radius: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
 a.btn-primary:hover {
-  background-color: #2c598a; /* Un tono más oscuro de --color-accion */
-  filter: brightness(1.1); /* Aumento de brillo en hover */
-  transform: scale(1.03); /* Efecto de zoom en hover */
+  background-color: #2c598a;
+  /* Un tono más oscuro de --color-accion */
+  filter: brightness(1.1);
+  /* Aumento de brillo en hover */
+  transform: scale(1.03);
+  /* Efecto de zoom en hover */
 }
 
 a.btn-secondary {
+  animation: sunlight 8s ease-in-out infinite;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -114,13 +197,17 @@ a.btn-secondary {
   border-color: var(--texto-principal);
   color: var(--texto-principal);
   border-radius: 30px;
-  transition: all 0.3s ease-in-out; /* Transición suave */
+  transition: all 0.3s ease-in-out;
+  /* Transición suave */
 }
 
 a.btn-secondary .icon {
-  flex-shrink: 0; /* Impide que el icono se reduzca */
-  filter: none; /* Sin filtro por defecto */
-  transition: filter 0.3s ease-in-out; /* Transición suave para el filtro */
+  flex-shrink: 0;
+  /* Impide que el icono se reduzca */
+  filter: none;
+  /* Sin filtro por defecto */
+  transition: filter 0.3s ease-in-out;
+  /* Transición suave para el filtro */
 }
 
 .btn-secondary span {
@@ -129,22 +216,26 @@ a.btn-secondary .icon {
 }
 
 a.btn-secondary:hover {
-  background: var(--color-accion); /* Cambia el fondo al color del texto */
-  color: whitesmoke; /* Cambia el color del texto al fondo original */
-  border-color: whitesmoke; /* Cambia el borde al fondo original */
-  filter: brightness(1.1);
+  background: var(--color-accion) !important;
+  /* Cambia el fondo al color del texto */
+  color: whitesmoke;
+  /* Cambia el color del texto al fondo original */
+  border-color: whitesmoke;
+  /* Cambia el borde al fondo original */
+  filter: none;
   transform: scale(1.1);
 }
 
 a.btn-secondary .icon {
-  flex-shrink: 0; /* Impide que el icono se reduzca */
-  color: var(
-    --texto-principal
-  ); /* Asegura que el ícono tenga el mismo color que el texto */
+  flex-shrink: 0;
+  /* Impide que el icono se reduzca */
+  color: var(--texto-principal);
+  /* Asegura que el ícono tenga el mismo color que el texto */
 }
 
 a.btn-secondary:hover .icon {
-  filter: invert(100%) brightness(1.2); /* Invierte los colores del ícono para simular el cambio a blanco */
+  filter: invert(100%);
+  /* Invierte los colores del ícono para simular el cambio a blanco */
 }
 
 /* Títulos */
@@ -184,18 +275,49 @@ h6 {
   vertical-align: middle;
 }
 
-/* Listas de habilidades */
+/* Sección Habilidades */
+/* Centramos el título */
+#habilidades h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Centramos las columnas */
+#habilidades .row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  /* Espacio entre las columnas */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centramos las columnas dentro de la sección */
+}
+
+/* Ajuste adicional para los textos e iconos en la lista */
 #habilidades ul {
-  list-style-type: none; /* Eliminar los puntos de la lista */
+  list-style: none;
   padding-left: 0;
 }
 
 #habilidades li {
-  margin-bottom: 15px; /* Espaciado entre ítems de la lista */
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-#habilidades h3 {
-  margin-bottom: 20px;
+#habilidades li img {
+  margin-right: 10px;
+  /* Espacio entre icono y texto */
+}
+
+/* Ajuste para columnas en pantallas pequeñas */
+@media (max-width: 768px) {
+  #habilidades .col-md-4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 /* Ajustes de iconos en header */
@@ -206,7 +328,43 @@ h6 {
 
 /* Iconos en botones primarios */
 a.btn-primary .icon {
-  filter: invert(
-    100%
-  ); /* Asegurar que los iconos en botones primarios sean visibles */
+  filter: invert(100%);
+  /* Asegurar que los iconos en botones primarios sean visibles */
+}
+
+/* Contenedor principal de proyectos */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* Tarjeta individual de proyecto */
+.project-card {
+  background-color: var(--fondo-principal);
+  border: 1px solid var(--color-accion);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 300px;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del proyecto */
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Información del proyecto */
+.project-info {
+  padding: 15px;
 }

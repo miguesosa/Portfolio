@@ -39,6 +39,22 @@
           alt="Foto de perfil de Miguel Adrián Sosa, desarrollador web"
           class="rounded-circle profile-img"
         />
+        <!-- Switch de tema claro/oscuro con íconos -->
+        <div class="theme-switch">
+          <input class="form-check-input" type="checkbox" id="themeSwitch" />
+          <label for="themeSwitch" class="theme-icons">
+            <img
+              src="assets/img/icons/sun.png"
+              alt="Icono modo claro"
+              class="icon light-icon"
+            />
+            <img
+              src="assets/img/icons/moon.png"
+              alt="Icono modo oscuro"
+              class="icon dark-icon"
+            />
+          </label>
+        </div>
         <div class="text-content">
           <h1 class="mb-3">Miguel Adrián Sosa</h1>
           <h4 class="mb-3">
@@ -132,7 +148,7 @@
     <!-- Sección de habilidades tecnológicas -->
     <section id="habilidades" class="container section">
       <h2>Tecnologías</h2>
-      <div class="row">
+      <div class="row justify-content-center">
         <!-- Tecnologías Frontend -->
         <div class="col-md-4">
           <h3>Frontend</h3>
@@ -227,31 +243,46 @@
     </section>
 
     <!-- Sección de proyectos -->
-    <section id="proyectos" class="container section">
-      <h2>Proyectos</h2>
-      <div class="row">
-        <!-- Proyecto 1 -->
-        <div class="col-md-6">
-          <h3>Money Map</h3>
-          <p>
-            App que permite registrar, categorizar y visualizar transacciones
-            financieras personales.
-          </p>
-        </div>
-        <!-- Proyecto 2 -->
-        <div class="col-md-6">
-          <h3>Music Inspiration Hub</h3>
-          <p>
-            App para ayudar a músicos a encontrar inspiración y proporcionar
-            recursos didácticos.
-          </p>
+    <section id="proyectos" class="section">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <div class="project-container">
+          <div class="project-card">
+            <img
+              src="/assets/img/icons/logo 3.png"
+              alt="Money Map"
+              class="project-image"
+            />
+            <div class="project-info">
+              <a href="https://miguesosa.github.io/Money-Map/"
+                ><h3>Money Map</h3></a
+              >
+              <p>
+                App que permite registrar, categorizar y visualizar
+                transacciones financieras personales.
+              </p>
+            </div>
+          </div>
+          <!-- Proyecto 2 -->
+          <div class="project-card">
+            <img
+              src="ruta-del-proyecto2.jpg"
+              alt="Music Inspiration Hub"
+              class="project-image"
+            />
+            <div class="project-info">
+              <a href="https://miguesosa.github.io/Music-Inspiration-Hub/"
+                ><h3>Music Inspiration Hub</h3></a
+              >
+              <p>
+                App para ayudar a músicos a encontrar inspiración y proporcionar
+                recursos didácticos.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <div class="container">
-      <hr />
-    </div>
 
     <!-- Footer -->
     <footer class="container footer">

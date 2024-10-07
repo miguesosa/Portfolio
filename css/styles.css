@@ -22,7 +22,7 @@
 
 /* --------------------- Estilos Globales --------------------- */
 body {
-  animation: sunlight 5s ease-in-out infinite;
+  animation: sunlight 8s ease-in-out infinite;
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: var(--fondo-principal);
@@ -172,7 +172,7 @@ a.btn-primary:hover {
 }
 
 a.btn-secondary {
-  animation: sunlight 5s ease-in-out infinite;
+  animation: sunlight 8s ease-in-out infinite;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -307,15 +307,20 @@ h6 {
 /* --------------------- Animaciones --------------------- */
 @keyframes sunlight {
   0% {
-    background-color: rgba(255, 239, 119, 1);
+    background-color: rgba(223, 236, 245, 1); /* Un azul muy suave */
   }
 
   50% {
-    background-color: rgba(135, 206, 250, 1);
+    background-color: rgba(
+      196,
+      201,
+      204,
+      1
+    ); /* Un gris claro acorde al fondo principal */
   }
 
   100% {
-    background-color: rgba(255, 239, 119, 1);
+    background-color: rgba(223, 236, 245, 1); /* Azul suave nuevamente */
   }
 }
 

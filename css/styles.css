@@ -16,18 +16,21 @@
   /* Color para títulos */
 }
 
-/* Estilos globales */
+* {
+  font-family: "Roboto", sans-serif !important;
+}
+
+/* --------------------- Estilos Globales --------------------- */
 body {
-  animation: sunlight 8s ease-in-out infinite;
+  animation: sunlight 5s ease-in-out infinite;
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
   scroll-behavior: smooth;
-  /* Desplazamiento suave */
 }
 
-/* Header */
+/* --------------------- Header --------------------- */
 body header.bg-light {
   background-color: transparent !important;
   padding: 20px 0;
@@ -41,6 +44,8 @@ body header.bg-light {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+  position: relative;
+  /* Añadido para el posicionamiento absoluto del switch */
 }
 
 /* Imagen de perfil */
@@ -50,15 +55,32 @@ body header.bg-light {
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
-  /* Efecto de zoom al pasar el ratón */
+  margin-right: 20px;
 }
 
 .header-container .profile-img:hover {
   transform: scale(1.1);
-  /* Ampliación de la imagen en hover */
 }
 
-/* Switch de temas */
+/* Texto del header */
+.header-container .text-content {
+  flex-grow: 1;
+}
+
+/* Botones del header */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+
+/* Ajustes de iconos en header */
+.header .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* --------------------- Switch de Temas --------------------- */
 .theme-switch {
   position: absolute;
   top: 10px;
@@ -85,91 +107,56 @@ body header.bg-light {
   display: block;
 }
 
-.theme-switch input[type="checkbox"]:checked~.theme-icons .light-icon {
+.theme-switch input[type="checkbox"]:checked ~ .theme-icons .light-icon {
   display: block;
 }
 
-.theme-switch input[type="checkbox"]:checked~.theme-icons .dark-icon {
+.theme-switch input[type="checkbox"]:checked ~ .theme-icons .dark-icon {
   display: none;
 }
 
-/* Nueva animación de fondo para modo claro */
-@keyframes sunlight {
-  0% {
-    background-color: rgba(255, 239, 119, 1);
-  }
-
-  50% {
-    background-color: rgba(135, 206, 250, 1);
-  }
-
-  100% {
-    background-color: rgba(255, 239, 119, 1);
-  }
-}
-
-/* Texto del header */
-.header-container .text-content {
-  flex-grow: 1;
-  margin-left: 20px;
-}
-
-/* Botones del header */
-.header-buttons {
-  display: flex;
-  gap: 10px;
-  padding-bottom: 12px;
-}
-
-/* Estilo del hr */
-.container hr {
-  border: none;
-  /* Eliminar el borde predeterminado */
-  border-top: 10px dotted var(--texto-principal);
-  /* Borde superior punteado */
-  width: 10%;
-  /* Ajustar el ancho total del hr */
-  margin: 20px auto;
-  /* Centrar el hr */
-  position: relative;
-  /* Para posicionar el pseudo-elemento */
-  opacity: 0.75;
-}
-
-/* Secciones del portfolio */
+/* --------------------- Estilos para el contenido --------------------- */
 .section {
   padding: 15px;
   background-color: transparent;
   color: var(--texto-principal);
 }
 
+.container hr {
+  border: none;
+  border-top: 10px dotted var(--texto-principal);
+  width: 10%;
+  margin: 20px auto;
+  position: relative;
+  opacity: 0.75;
+}
+
+/* --------------------- Secciones (Portfolio) --------------------- */
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* Espacio entre columnas */
   margin-top: 15px;
 }
 
 .col-md-4 {
   flex: 0 0 20% !important;
-  /* Tres columnas de igual ancho */
+  border: 1px solid var(--texto-principal);
   margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Sombra en los bordes */
   border-radius: 8px;
   padding: 20px;
   transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Footer */
+/* --------------------- Footer --------------------- */
 .footer {
   background-color: transparent;
   padding: 20px 0;
   margin-bottom: 20px;
 }
 
-/* Botones */
+/* --------------------- Botones --------------------- */
 a.btn-primary {
   background-color: var(--color-accion) !important;
   border-color: var(--color-accion) !important;
@@ -180,15 +167,12 @@ a.btn-primary {
 
 a.btn-primary:hover {
   background-color: #2c598a;
-  /* Un tono más oscuro de --color-accion */
   filter: brightness(1.1);
-  /* Aumento de brillo en hover */
   transform: scale(1.03);
-  /* Efecto de zoom en hover */
 }
 
 a.btn-secondary {
-  animation: sunlight 8s ease-in-out infinite;
+  animation: sunlight 5s ease-in-out infinite;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -198,103 +182,79 @@ a.btn-secondary {
   color: var(--texto-principal);
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
-  /* Transición suave */
 }
 
 a.btn-secondary .icon {
   flex-shrink: 0;
-  /* Impide que el icono se reduzca */
   filter: none;
-  /* Sin filtro por defecto */
   transition: filter 0.3s ease-in-out;
-  /* Transición suave para el filtro */
-}
-
-.btn-secondary span {
-  display: inline-block;
-  text-align: center;
 }
 
 a.btn-secondary:hover {
   background: var(--color-accion) !important;
-  /* Cambia el fondo al color del texto */
   color: whitesmoke;
-  /* Cambia el color del texto al fondo original */
   border-color: whitesmoke;
-  /* Cambia el borde al fondo original */
   filter: none;
   transform: scale(1.1);
 }
 
-a.btn-secondary .icon {
-  flex-shrink: 0;
-  /* Impide que el icono se reduzca */
-  color: var(--texto-principal);
-  /* Asegura que el ícono tenga el mismo color que el texto */
-}
-
 a.btn-secondary:hover .icon {
   filter: invert(100%);
-  /* Invierte los colores del ícono para simular el cambio a blanco */
 }
 
-/* Títulos */
+/* Iconos en botones primarios */
+a.btn-primary .icon {
+  filter: invert(100%);
+}
+
+/* --------------------- Títulos --------------------- */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: var(--color-secundario);
+  color: var(--texto-principal);
 }
 
-/* Iconos generales */
-.icon {
+/* --------------------- Iconos generales --------------------- */
+.icon,
+.icon-b,
+.tech-icon,
+.tech-icon-b {
   width: 25px;
   height: 25px;
   vertical-align: middle;
 }
 
-.icon-b {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.tech-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
+.tech-icon,
 .tech-icon-b {
   width: 32px;
   height: 32px;
   margin-right: 10px;
-  vertical-align: middle;
 }
 
-/* Sección Habilidades */
-/* Centramos el título */
-#habilidades h2 {
+.icon-placeholder {
+  width: 25px;
+  height: 25px;
+}
+
+/* --------------------- Sección Habilidades --------------------- */
+#habilidades h2,
+#proyectos h2 {
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* Centramos las columnas */
 #habilidades .row {
   display: flex;
   justify-content: center;
   gap: 30px;
-  /* Espacio entre las columnas */
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-  /* Centramos las columnas dentro de la sección */
 }
 
-/* Ajuste adicional para los textos e iconos en la lista */
 #habilidades ul {
   list-style: none;
   padding-left: 0;
@@ -308,31 +268,9 @@ h6 {
 
 #habilidades li img {
   margin-right: 10px;
-  /* Espacio entre icono y texto */
 }
 
-/* Ajuste para columnas en pantallas pequeñas */
-@media (max-width: 768px) {
-  #habilidades .col-md-4 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
-
-/* Ajustes de iconos en header */
-.header .icon {
-  width: 16px;
-  height: 16px;
-}
-
-/* Iconos en botones primarios */
-a.btn-primary .icon {
-  filter: invert(100%);
-  /* Asegurar que los iconos en botones primarios sean visibles */
-}
-
-/* Contenedor principal de proyectos */
+/* --------------------- Sección Proyectos --------------------- */
 .project-container {
   display: flex;
   flex-wrap: wrap;
@@ -341,7 +279,6 @@ a.btn-primary .icon {
   padding: 20px 0;
 }
 
-/* Tarjeta individual de proyecto */
 .project-card {
   background-color: var(--fondo-principal);
   border: 1px solid var(--color-accion);
@@ -357,14 +294,53 @@ a.btn-primary .icon {
   transform: scale(1.05);
 }
 
-/* Imagen del proyecto */
 .project-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-/* Información del proyecto */
 .project-info {
   padding: 15px;
+}
+
+/* --------------------- Animaciones --------------------- */
+@keyframes sunlight {
+  0% {
+    background-color: rgba(255, 239, 119, 1);
+  }
+
+  50% {
+    background-color: rgba(135, 206, 250, 1);
+  }
+
+  100% {
+    background-color: rgba(255, 239, 119, 1);
+  }
+}
+
+/* --------------------- Media Queries --------------------- */
+
+/* Ajuste para columnas en pantallas pequeñas */
+@media (max-width: 768px) {
+  #habilidades .col-md-4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Media queries comunes */
+@media (max-width: 992px) {
+  /* Tablets */
+  .col-md-4 {
+    flex: 0 0 50% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Smartphones */
+  .col-md-4 {
+    flex: 0 0 100% !important;
+  }
 }

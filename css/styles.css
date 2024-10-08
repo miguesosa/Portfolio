@@ -207,6 +207,13 @@ a.btn-primary .icon {
   filter: invert(100%);
 }
 
+/* Retroalimentación táctil */
+a.btn-primary:active,
+a.btn-secondary:active,
+.project-card:active {
+  transform: scale(0.98);
+}
+
 /* --------------------- Títulos --------------------- */
 h1,
 h2,
@@ -347,5 +354,13 @@ h6 {
   /* Smartphones */
   .col-md-4 {
     flex: 0 0 100% !important;
+  }
+}
+
+@media (hover: none) {
+  a.btn-primary:hover,
+  a.btn-secondary:hover,
+  .project-card:hover {
+    transform: none;
   }
 }

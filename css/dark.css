@@ -225,6 +225,13 @@ a.btn-secondary:hover .icon {
   filter: none;
 }
 
+/* Retroalimentación táctil */
+a.btn-primary:active,
+a.btn-secondary:active,
+.project-card:active {
+  transform: scale(0.98);
+}
+
 /* --------------------- Títulos --------------------- */
 h1,
 h2,
@@ -377,5 +384,13 @@ h6 {
     padding-left: 12px !important;
     padding-right: 12px !important;
     box-sizing: border-box;
+  }
+}
+
+@media (hover: none) {
+  a.btn-primary:hover,
+  a.btn-secondary:hover,
+  .project-card:hover {
+    transform: none;
   }
 }

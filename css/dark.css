@@ -16,11 +16,11 @@
   /* Color para títulos */
 }
 
+/* --------------------- Estilos Globales --------------------- */
 * {
   font-family: "Roboto", sans-serif !important;
 }
 
-/* --------------------- Estilos Globales --------------------- */
 body {
   animation: moonlight 8s ease-in-out infinite;
   margin: 0;
@@ -28,6 +28,17 @@ body {
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
   scroll-behavior: smooth;
+}
+
+header,
+footer {
+  max-width: 1100px !important;
+  margin: 0 auto; /* Centrar el contenido */
+}
+
+main {
+  max-width: 900px; /* O 1000px si prefieres */
+  margin: 0 auto; /* Centrar el contenido */
 }
 
 /* --------------------- Header --------------------- */
@@ -131,30 +142,20 @@ body header.bg-dark {
   opacity: 0.75;
 }
 
-/* --------------------- Secciones (Portfolio) --------------------- */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.col-md-4 {
-  flex: 0 0 20% !important;
-  border: 1px solid var(--texto-principal);
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
 /* --------------------- Footer --------------------- */
 .footer {
+  text-align: center;
   background-color: transparent;
   padding: 20px 12px;
   margin-bottom: 20px;
   box-sizing: border-box; /* Ajustado para asegurar que los paddings se respeten */
+}
+
+.footer-buttons {
+  display: flex; /* Flexbox para alinear los botones */
+  justify-content: center; /* Centra los botones en el footer */
+  flex-wrap: wrap; /* Permitir que los botones se envuelvan si es necesario */
+  gap: 15px; /* Espacio entre los botones */
 }
 
 /* Ajuste global para el contenedor del footer */
@@ -254,9 +255,9 @@ h6 {
 
 .tech-icon,
 .tech-icon-b {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  margin-right: 0;
 }
 
 .tech-icon-b {
@@ -275,34 +276,41 @@ h6 {
 }
 
 /* --------------------- Sección Habilidades --------------------- */
-#habilidades h2,
-#proyectos h2 {
+#habilidades h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-
-#habilidades .row {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#habilidades ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-#habilidades li {
-  display: flex;
-  align-items: center;
+#habilidades h4 {
+  text-align: center;
   margin-bottom: 15px;
 }
 
-#habilidades li img {
-  margin-right: 10px;
+.tech-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex; /* Flexbox para alinear elementos */
+  flex-wrap: wrap; /* Permitir que los íconos se envuelvan */
+  justify-content: center; /* Alinea los íconos al inicio */
+  gap: 15px; /* Espacio entre íconos */
+}
+
+.tech-list li {
+  display: flex;
+  flex-direction: column; /* Alinea icono y texto en columna */
+  align-items: center; /* Centra los elementos dentro de la columna */
+  margin: 15px; /* Espacio uniforme entre las cajas */
+  width: 80px;
+  border: none;
+  box-shadow: none;
+}
+
+.tech-list li img {
+  margin-bottom: 5px; /* Espacio entre ícono y texto */
+  display: block;
+}
+
+.tech-list li span {
+  text-align: center; /* Alinea el texto al centro */
 }
 
 /* --------------------- Sección Proyectos --------------------- */
@@ -351,6 +359,38 @@ h6 {
 
   100% {
     background-color: rgba(32, 32, 32, 1);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(140px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Animación activada */
+.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

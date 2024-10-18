@@ -99,6 +99,11 @@ body header.bg-light {
   display: flex;
   align-items: center;
   gap: 5px;
+  transition: transform 0.3s;
+}
+
+.theme-switch:hover {
+  transform: scale(1.1); /* Escala el switch al hacer hover */
 }
 
 .theme-switch input[type="checkbox"] {

@@ -1,349 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio de Miguel Adrián Sosa, desarrollador web, programador Full Stack Python y diseñador UX/UI. Exploración de proyectos y habilidades en programación."
-    />
-    <title>Portfolio | Miguel Adrián Sosa</title>
-    <!-- Archivo de estilos personalizados -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Roboto de Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap 5.3 para estilos y componentes responsivos -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Favicon del sitio -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/img/icons/web-development.ico"
-    />
-  </head>
-  <body>
-    <!-- Encabezado del sitio -->
-    <header class="bg-light py-4">
-      <div class="container header-container">
-        <!-- Imagen de perfil -->
-        <img
-          src="assets/img/profile.png"
-          alt="Foto de perfil de Miguel Adrián Sosa, desarrollador web"
-          class="rounded-circle profile-img"
-        />
-        <!-- Switch de tema claro/oscuro con íconos -->
-        <div class="theme-switch">
-          <input class="form-check-input" type="checkbox" id="themeSwitch" />
-          <label for="themeSwitch" class="theme-icons">
-            <img
-              src="assets/img/icons/sun.png"
-              alt="Icono modo claro"
-              class="icon light-icon"
-            />
-            <img
-              src="assets/img/icons/moon.png"
-              alt="Icono modo oscuro"
-              class="icon dark-icon"
-            />
-          </label>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio de Miguel Adrián Sosa, desarrollador web, programador Full Stack Python y diseñador UX/UI. Exploración de proyectos y habilidades en programación." />
+  <title>Portfolio | Miguel Adrián Sosa</title>
+  <!-- Archivo de estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Roboto de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5.3 para estilos y componentes responsivos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Favicon del sitio -->
+  <link rel="icon" type="image/x-icon" href="assets/img/icons/web-development.ico" />
+</head>
+
+<body>
+  <!-- Encabezado del sitio -->
+  <header class="bg-light py-4">
+    <div class="container header-container">
+      <!-- Imagen de perfil -->
+      <img src="assets/img/profile.png" alt="Foto de perfil de Miguel Adrián Sosa, desarrollador web"
+        class="rounded-circle profile-img" />
+      <!-- Switch de tema claro/oscuro con íconos -->
+      <div class="theme-switch">
+        <input class="form-check-input" type="checkbox" id="themeSwitch" />
+        <label for="themeSwitch" class="theme-icons">
+          <img src="assets/img/icons/sun.png" alt="Icono modo claro" class="icon light-icon" />
+          <img src="assets/img/icons/moon.png" alt="Icono modo oscuro" class="icon dark-icon" />
+        </label>
+      </div>
+      <div class="text-content">
+        <h1 class="mb-3">Miguel Adrián Sosa</h1>
+        <h4 class="mb-3">
+          Analista programador || Desarrollador Full Stack Python || Diseñador
+          UX/UI
+        </h4>
+        <div class="d-flex align-items-center mb-3">
+          <img src="assets/img/icons/placeholder.png" alt="Icono de ubicación" class="icon-placeholder" />
+          <h6>Buenos Aires - Olivos</h6>
         </div>
-        <div class="text-content">
-          <h1 class="mb-3">Miguel Adrián Sosa</h1>
-          <h4 class="mb-3">
-            Analista programador || Desarrollador Full Stack Python || Diseñador
-            UX/UI
-          </h4>
-          <div class="d-flex align-items-center mb-3">
-            <img
-              src="assets/img/icons/placeholder.png"
-              alt="Icono de ubicación"
-              class="icon-placeholder"
-            />
-            <h6>Buenos Aires - Olivos</h6>
-          </div>
-          <!-- Botones de contacto y CV -->
-          <div class="d-flex flex-wrap gap-2">
-            <a
-              href="mailto:migueladriansosa@gmail.com"
-              class="btn btn-primary d-flex align-items-center gap-2"
-            >
-              <img
-                src="assets/img/icons/envelope.png"
-                alt="Icono de correo electrónico"
-                class="icon"
-              />
-              <strong>migueladriansosa@gmail.com</strong>
-            </a>
-            <a
-              href="assets/docs/CV - Sosa, Miguel Adrián.pdf"
-              class="btn btn-secondary d-flex align-items-center"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="assets/img/icons/cv.png"
-                alt="Descargar CV"
-                class="icon"
-              />
-            </a>
-            <a
-              href="https://github.com/miguesosa"
-              class="btn btn-secondary d-flex align-items-center"
-              target="_blank"
-              aria-label="Enlace a mi perfil de GitHub"
-              rel="noopener"
-            >
-              <img
-                src="assets/img/icons/github.png"
-                alt="Icono GitHub"
-                class="icon"
-              />
-            </a>
-            <a
-              href="https://linkedin.com/in/miguesosa"
-              class="btn btn-secondary d-flex align-items-center"
-              target="_blank"
-              aria-label="Enlace a mi perfil de LinkedIn"
-              rel="noopener"
-            >
-              <img
-                src="assets/img/icons/linkedin.png"
-                alt="Icono LinkedIn"
-                class="icon"
-              />
-            </a>
-          </div>
+        <!-- Botones de contacto y CV -->
+        <div class="d-flex flex-wrap gap-2">
+          <a href="mailto:migueladriansosa@gmail.com" class="btn btn-primary d-flex align-items-center gap-2">
+            <img src="assets/img/icons/envelope.png" alt="Icono de correo electrónico" class="icon" />
+            <strong>migueladriansosa@gmail.com</strong>
+          </a>
+          <a href="assets/docs/CV - Sosa, Miguel Adrián.pdf" class="btn btn-secondary d-flex align-items-center"
+            target="_blank" rel="noopener">
+            <img src="assets/img/icons/cv.png" alt="Descargar CV" class="icon" />
+          </a>
+          <a href="https://github.com/miguesosa" class="btn btn-secondary d-flex align-items-center" target="_blank"
+            aria-label="Enlace a mi perfil de GitHub" rel="noopener">
+            <img src="assets/img/icons/github.png" alt="Icono GitHub" class="icon" />
+          </a>
+          <a href="https://linkedin.com/in/miguesosa" class="btn btn-secondary d-flex align-items-center"
+            target="_blank" aria-label="Enlace a mi perfil de LinkedIn" rel="noopener">
+            <img src="assets/img/icons/linkedin.png" alt="Icono LinkedIn" class="icon" />
+          </a>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <!-- Sección sobre mí -->
-      <section id="sobre-mi" class="container section">
-        <h2>Sobre mí</h2>
-        <p>
-          Soy un entusiasta del desarrollo web que, tras una carrera en la enseñanza musical, se sumergió en el mundo IT.
-          Actualmente curso el cuarto de cinco cuatrimestres de la carrera de
-          <strong>Analista Programador en la Universidad Abierta Interamericana (UAI)</strong>, donde he adquirido
-          sólidos conocimientos en programación, POO y análisis de sistemas y he completado estudios en 
-          <strong>Full Stack Python</strong> y <strong>Diseño UX/UI</strong>.
-          Además, tengo una sólida trayectoria en atención al cliente, lo que me ha enseñado a resolver problemas de manera eficiente y a enfocarme en las necesidades del usuario. Busco oportunidades laborales remotas que me permitan colaborar en proyectos innovadores y seguir creciendo en un entorno dinámico. En mis ratos libres, disfruto de la música, el cine y la lectura.
-        </p>
-      </section>
-
-      <div class="container">
-        <hr />
-      </div>
-
-      <!-- Sección de habilidades tecnológicas -->
-      <section id="habilidades" class="container section">
-        <h2>Tecnologías</h2>
-        <div class="row">
-          <!-- Tecnologías Frontend -->
-          <div class="col-md-12 fade-in-bottom">
-            <h4 class="fade-in-left">Desarrollo Frontend</h4>
-            <ul class="tech-list">
-              <li>
-                <img
-                  src="assets/img/icons/html.png"
-                  alt="HTML Logo"
-                  class="tech-icon"
-                />
-                <span>HTML</span>
-              </li>
-              <li>
-                <img
-                  src="assets/img/icons/css.png"
-                  alt="CSS Logo"
-                  class="tech-icon"
-                />
-                <span>CSS</span>
-              </li>
-              <li>
-                <img
-                  src="assets/img/icons/bootstrap.png"
-                  style="width: 55px; 
-                  height: 45px;"
-                  alt="Bootstrap Logo"
-                  class="tech-icon"
-                />
-                <span>Bootstrap</span>
-              </li>
-              <li>
-                <img
-                  src="assets/img/icons/javascript.png"
-                  alt="JavaScript Logo"
-                  class="tech-icon"
-                />
-                <span>JavaScript</span>
-              </li>
-            </ul class="tech-list">
-          </div>
-          <!-- Tecnologías Backend -->
-          <div class="col-md-12 fade-in-bottom">
-            <h4 class="fade-in-left">Desarrollo Backend</h4>
-            <ul class="tech-list">
-              <li>
-                <img
-                  src="assets/img/icons/python.png"
-                  alt="Python Logo"
-                  class="tech-icon"
-                />
-                <span>Python</span>
-              </li>
-              <li>
-                <img
-                  src="assets/img/icons/flask.png"
-                  alt="Flask Logo"
-                  class="tech-icon-b"
-                />
-                <span>Flask</span>
-              </li>
-              <li>
-                <img
-                  src="assets/img/icons/django.png"
-                  alt="Django Logo"
-                  class="tech-icon"
-                />
-                <span>Django</span>
-              </li>
-            </ul>
-          </div>
-          <!-- Bases de Datos -->
-          <div class="col-md-12 fade-in-bottom">
-            <h4 class="fade-in-left">Bases de Datos</h4>
-            <ul class="tech-list">
-              <li>
-                <img
-                  src="assets/img/icons/mysql.png"
-                  alt="MySQL Logo"
-                  class="tech-icon"
-                />
-                <span>MySQL</span>
-              </li>
-              <li>
-                <img
-                  src="assets/img/icons/sql.png"
-                  alt="SQL Logo"
-                  class="tech-icon-b"
-                />
-                <span>SQL Server</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección de proyectos -->
-      <section id="proyectos" class="section">
-        <div class="container">
-          <h2 fade-in-left>Proyectos</h2>
-          <div class="project-container fade-in-bottom">
-            <div class="project-card">
-              <img
-                src="assets/img/icons/logo-MM.png"
-                alt="Money Map"
-                class="project-image"
-              />
-              <div class="project-info">
-                <a
-                  href="https://miguesosa.github.io/Money-Map/"
-                  target="_blank"
-                  rel="noopener"
-                  ><h3>Money Map</h3></a
-                >
-                <p>
-                  App que permite registrar, categorizar y visualizar
-                  transacciones financieras personales. (En desarrollo)
-                </p>
-              </div>
-            </div>
-            <!-- Proyecto 2 -->
-            <div class="project-card">
-              <img
-                src="assets/img/icons/logo-MIH.png"
-                alt="Music Inspiration Hub"
-                class="project-image"
-              />
-              <div class="project-info">
-                <a
-                  href="https://miguesosa.github.io/Music-Inspiration-Hub/"
-                  target="_blank"
-                  rel="noopener"
-                  ><h3>Music Inspiration Hub</h3></a
-                >
-                <p>
-                  App para ayudar a músicos a encontrar inspiración y
-                  proporcionar recursos didácticos. (En desarrollo)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  <main>
+    <!-- Sección sobre mí -->
+    <section id="sobre-mi" class="container section">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy un entusiasta del desarrollo web que, tras una carrera en la enseñanza musical, se sumergió en el mundo IT.
+        Actualmente curso el cuarto de cinco cuatrimestres de la carrera de
+        <strong>Analista Programador en la Universidad Abierta Interamericana (UAI)</strong>, donde he adquirido
+        sólidos conocimientos en programación, POO y análisis de sistemas y he completado estudios en
+        <strong>Full Stack Python</strong> y <strong>Diseño UX/UI</strong>.
+        Además, tengo una sólida trayectoria en atención al cliente, lo que me ha enseñado a resolver problemas de
+        manera eficiente y a enfocarme en las necesidades del usuario. Busco oportunidades laborales remotas que me
+        permitan colaborar en proyectos innovadores y seguir creciendo en un entorno dinámico. En mis ratos libres,
+        disfruto de la música, el cine y la lectura.
+      </p>
+    </section>
 
     <div class="container">
       <hr />
     </div>
 
-    <!-- Footer -->
-    <footer class="container footer">
-      <h4 class="mb-3 fade-in-bottom">Miguel Adrián Sosa</h4>
-      <div class="d-flex flex-wrap gap-2 footer-buttons fade-in-left">
-        <a href="mailto:migueladriansosa@gmail.com" class="btn btn-primary">
-          <img
-            src="assets/img/icons/envelope.png"
-            alt="Icono de correo electronico"
-            class="icon"
-          />
-          <strong>migueladriansosa@gmail.com</strong>
-        </a>
-        <a
-          href="assets/docs/cv.pdf"
-          class="btn btn-secondary"
-          target="_blank"
-          rel="noopener"
-        >
-          <img src="assets/img/icons/cv.png" alt="Descargar CV" class="icon" />
-        </a>
-        <a
-          href="https://github.com/miguesosa"
-          class="btn btn-secondary"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="assets/img/icons/github.png"
-            alt="Icono GitHub"
-            class="icon"
-          />
-        </a>
-        <a
-          href="https://linkedin.com/in/miguel-adrian-sosa"
-          class="btn btn-secondary"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="assets/img/icons/linkedin.png"
-            alt="Icono LinkedIn"
-            class="icon"
-          />
-        </a>
+    <!-- Sección de habilidades tecnológicas -->
+    <section id="habilidades" class="container section">
+      <h2>Tecnologías</h2>
+      <div class="row">
+        <!-- Tecnologías Frontend -->
+        <div class="col-md-12 fade-in-bottom">
+          <h4 class="fade-in-left">Desarrollo Frontend</h4>
+          <ul class="tech-list">
+            <li>
+              <img src="assets/img/icons/html.png" alt="HTML Logo" class="tech-icon" />
+              <span>HTML</span>
+            </li>
+            <li>
+              <img src="assets/img/icons/css.png" alt="CSS Logo" class="tech-icon" />
+              <span>CSS</span>
+            </li>
+            <li>
+              <img src="assets/img/icons/bootstrap.png" style="width: 55px; 
+                  height: 45px;" alt="Bootstrap Logo" class="tech-icon" />
+              <span>Bootstrap</span>
+            </li>
+            <li>
+              <img src="assets/img/icons/javascript.png" alt="JavaScript Logo" class="tech-icon" />
+              <span>JavaScript</span>
+            </li>
+          </ul class="tech-list">
+        </div>
+        <!-- Tecnologías Backend -->
+        <div class="col-md-12 fade-in-bottom">
+          <h4 class="fade-in-left">Desarrollo Backend</h4>
+          <ul class="tech-list">
+            <li>
+              <img src="assets/img/icons/python.png" alt="Python Logo" class="tech-icon" />
+              <span>Python</span>
+            </li>
+            <li>
+              <img src="assets/img/icons/flask.png" alt="Flask Logo" class="tech-icon-b" />
+              <span>Flask</span>
+            </li>
+            <li>
+              <img src="assets/img/icons/django.png" alt="Django Logo" class="tech-icon" />
+              <span>Django</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Bases de Datos -->
+        <div class="col-md-12 fade-in-bottom">
+          <h4 class="fade-in-left">Bases de Datos</h4>
+          <ul class="tech-list">
+            <li>
+              <img src="assets/img/icons/mysql.png" alt="MySQL Logo" class="tech-icon" />
+              <span>MySQL</span>
+            </li>
+            <li>
+              <img src="assets/img/icons/sql.png" alt="SQL Logo" class="tech-icon-b" />
+              <span>SQL Server</span>
+            </li>
+          </ul>
+        </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- Archivos JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <!-- Sección de proyectos -->
+    <section id="proyectos" class="section">
+      <div class="container">
+        <h2 fade-in-left>Proyectos</h2>
+        <div class="project-container fade-in-bottom">
+          <div class="project-card">
+            <img src="assets/img/icons/logo-MM.png" alt="Money Map" class="project-image" />
+            <div class="project-info">
+              <h3>Money Map</h3>
+              <p>
+                App que permite registrar, categorizar y visualizar
+                transacciones financieras personales.
+              </p>
+              <p>
+                (En desarrollo)
+              </p>
+            </div>
+          </div>
+          <!-- Proyecto 2 -->
+          <div class="project-card">
+            <img src="assets/img/icons/logo-MIH.png" alt="Music Inspiration Hub" class="project-image" />
+            <div class="project-info">
+              <h3>Music Inspiration Hub</h3>
+              <p>
+                App para ayudar a músicos a encontrar inspiración y
+                proporcionar recursos didácticos.
+              </p>
+              <p>
+                (En desarrollo)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="container">
+    <hr />
+  </div>
+
+  <!-- Footer -->
+  <footer class="container footer">
+    <h4 class="mb-3 fade-in-bottom">Miguel Adrián Sosa</h4>
+    <div class="d-flex flex-wrap gap-2 footer-buttons fade-in-left">
+      <a href="mailto:migueladriansosa@gmail.com" class="btn btn-primary">
+        <img src="assets/img/icons/envelope.png" alt="Icono de correo electronico" class="icon" />
+        <strong>migueladriansosa@gmail.com</strong>
+      </a>
+      <a href="assets/docs/cv.pdf" class="btn btn-secondary" target="_blank" rel="noopener">
+        <img src="assets/img/icons/cv.png" alt="Descargar CV" class="icon" />
+      </a>
+      <a href="https://github.com/miguesosa" class="btn btn-secondary" target="_blank" rel="noopener">
+        <img src="assets/img/icons/github.png" alt="Icono GitHub" class="icon" />
+      </a>
+      <a href="https://linkedin.com/in/miguel-adrian-sosa" class="btn btn-secondary" target="_blank" rel="noopener">
+        <img src="assets/img/icons/linkedin.png" alt="Icono LinkedIn" class="icon" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- Archivos JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
